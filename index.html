@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HX03264</title>
+    <!-- 使用CDN加载CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 背景音乐控制器 -->
+    <div class="audio-control">
+        <audio id="bgMusic" loop>
+            <!-- 使用CDN音乐 -->
+            <source src="https://cdn.jsdelivr.net/gh/your-username/your-repo@main/media/background-music.mp3" type="audio/mpeg">
+            您的浏览器不支持音频播放。
+        </audio>
+        <button id="toggleMusic" class="music-toggle">
+            <span class="music-icon"><i class="fas fa-music"></i></span>
+        </button>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">戴先生</div>
+        <div class="nav-links">
+            <a href="#home">首页</a>
+            <a href="#history">船舶历史</a>
+            <a href="#works">作品展示</a>
+            <a href="#about">关于我</a>
+            <a href="#contact">联系方式</a>
+        </div>
+    </nav>
+
+    <!-- 首页区域 -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <!-- 使用新的背景图片 -->
+            <img src="http://www.csschpws.com/upload_img/20150820170802CR-n16.jpg" alt="船舶制造" class="hero-image">
+        </div>
+        <div class="hero-content">
+            <h1>船舶制造技术</h1>
+            <p>传承千年工艺，创新现代科技</p>
+        </div>
+    </section>
+
+    <!-- 船舶制造历史 -->
+    <section id="history" class="history">
+        <h2>船舶制造历史</h2>
+        <div class="history-timeline">
+            <div class="timeline-item" data-bs-toggle="modal" data-bs-target="#ancientModal">
+                <div class="timeline-content">
+                    <h3>古代造船</h3>
+                    <!-- 使用Pexels的古代船舶图片 -->
+                    <img src="https://th.bing.com/th/id/OIP.Qb_SkwYSQ_4HLx_tDKF9yAHaEK?w=311&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="古代船舶">
+                    <p>从独木舟到帆船，人类最早的航海工具</p>
+                    <div class="timeline-hover">
+                        <span>点击查看详情</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item" data-bs-toggle="modal" data-bs-target="#medievalModal">
+                <div class="timeline-content">
+                    <h3>中世纪造船</h3>
+                    <img src="https://th.bing.com/th/id/OIP.BG9ve6QWCKznYY9ihNp7BwHaFi?w=256&h=191&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="中世纪船舶">
+                    <p>维京长船与郑和宝船的时代</p>
+                    <div class="timeline-hover">
+                        <span>点击查看详情</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item" data-bs-toggle="modal" data-bs-target="#industrialModal">
+                <div class="timeline-content">
+                    <h3>工业革命</h3>
+                    <img src="https://www.bing.com/th/id/OIP.ymwRNshs_PXbx6oML7jFHAHaFV?w=172&h=185&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="工业革命船舶">
+                    <p>蒸汽船的出现与钢铁船体的发展</p>
+                    <div class="timeline-hover">
+                        <span>点击查看详情</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item" data-bs-toggle="modal" data-bs-target="#modernModal">
+                <div class="timeline-content">
+                    <h3>现代造船</h3>
+                    <img src="https://th.bing.com/th/id/R.7be2cac1375a4ee6a2bea94c427228c7?rik=kqzy4ZHTUjpn2w&riu=http%3a%2f%2fwww.deli2005.com%2fDM-static%2fupload%2fimage%2f1%2f20180807_104140_4693.jpg&ehk=1Xd79%2f15Jv9TT1H2k90Xf845rsjSuedIZgKp9xVfPWQ%3d&risl=&pid=ImgRaw&r=0" alt="现代船舶">
+                    <p>巨型货轮与豪华邮轮的时代</p>
+                    <div class="timeline-hover">
+                        <span>点击查看详情</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item" data-bs-toggle="modal" data-bs-target="#huangpuModal">
+                <div class="timeline-content">
+                    <h3>黄埔文冲</h3>
+                    <img src="http://www.csschpws.com/upload_img/12822057263t.jpg" alt="黄埔文冲">
+                    <p>中国历史最悠久的船舶企业</p>
+                    <div class="timeline-hover">
+                        <span>点击查看详情</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 历史文章模态框 -->
+    <div class="modal fade" id="ancientModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">古代造船史</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="article-content">
+                        <img src="https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="古代船舶" class="article-image">
+                        <div class="article-text">
+                            <h3>古代造船技术的发展历程</h3>
+                            <p>从新石器时代的独木舟到明代郑和宝船的辉煌，古代造船技术经历了四次革命性突破，形成了跨越四大文明圈的技术体系。</p>
+
+                            <h4>一、发展阶段与技术特征</h4>
+                            <div class="history-period">
+                                <h5>1. 原始初创期（约前8000-前3000年）</h5>
+                                <ul>
+                                    <li><strong>技术原型：</strong>中国河姆渡遗址出土的7000年前木桨，印证了长江流域原始舟楫的存在</li>
+                                    <li><strong>典型船型：</strong>北欧维京人兽皮船（用桦树皮缝制船身）、古埃及芦苇船（纸莎草编织结构）</li>
+                                    <li><strong>动力系统：</strong>人力划桨为主，部分地区出现简易风帆（如美索不达米亚的方帆）</li>
+                                </ul>
+
+                                <h5>2. 结构革新期（前3000-公元500年）</h5>
+                                <ul>
+                                    <li><strong>关键突破：</strong>地中海地区发明榫卯结构（克里特岛米诺斯文明），中国商代出现木板船</li>
+                                    <li><strong>典型船型：</strong>汉代楼船（高十余丈，设三重甲板）、罗马商船（载重达200吨）</li>
+                                    <li><strong>动力系统：</strong>橹的发明（比桨效率提升30%），风帆技术传入东亚</li>
+                                </ul>
+
+                                <h5>3. 体系成熟期（500-1500年）</h5>
+                                <ul>
+                                    <li><strong>技术集成：</strong>宋代福船首创水密隔舱（现存最早实物见于泉州沉船）</li>
+                                    <li><strong>典型船型：</strong>阿拉伯三角帆船（印度洋贸易主力）、威尼斯桨帆船（配备25对桨）</li>
+                                    <li><strong>导航技术：</strong>指南针（宋代）与牵星板（元代）的应用</li>
+                                </ul>
+                            </div>
+
+                            <h4>二、核心技术创新</h4>
+                            <div class="tech-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>技术领域</th>
+                                            <th>代表成就</th>
+                                            <th>历史价值</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>船体结构</strong></td>
+                                            <td>水密隔舱（宋代）</td>
+                                            <td>抗沉性提升50%，影响至今船舶设计</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>连接工艺</strong></td>
+                                            <td>铁钉榫接（唐代）</td>
+                                            <td>使船体强度提升4倍</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>风帆系统</strong></td>
+                                            <td>平衡纵帆（明代）</td>
+                                            <td>逆风航行能力提升30%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>导航技术</strong></td>
+                                            <td>过洋牵星术（元代）</td>
+                                            <td>实现跨洋航行精准定位</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4>三、区域技术特色</h4>
+                            <div class="region-tech">
+                                <div class="region-item">
+                                    <h5>东亚体系</h5>
+                                    <ul>
+                                        <li><strong>特征：</strong>尖底船型、多桅多帆、橹桨并用</li>
+                                        <li><strong>代表作：</strong>郑和宝船（长120米，载重约1500吨）</li>
+                                    </ul>
+                                </div>
+                                <div class="region-item">
+                                    <h5>地中海体系</h5>
+                                    <ul>
+                                        <li><strong>特征：</strong>圆底结构、龙骨承重、风帆与桨结合</li>
+                                        <li><strong>代表作：</strong>卡拉维尔帆船（哥伦布探险船）</li>
+                                    </ul>
+                                </div>
+                                <div class="region-item">
+                                    <h5>北欧体系</h5>
+                                    <ul>
+                                        <li><strong>特征：</strong>长船造型、重叠式船板、龙首雕刻</li>
+                                        <li><strong>代表作：</strong>戈斯塔德船（9世纪维京战船）</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h4>四、技术影响与遗产</h4>
+                            <ul>
+                                <li><strong>贸易网络构建：</strong>唐宋时期中国海船将海上丝绸之路延伸至东非</li>
+                                <li><strong>军事变革：</strong>明代福船装备的大发熕（重炮）改变海战模式</li>
+                                <li><strong>技术传播：</strong>阿拉伯三角帆经十字军传入欧洲，促成大航海时代</li>
+                                <li><strong>现代启示：</strong>水密隔舱技术被18世纪英国海军采用，写入《航海法典》</li>
+                            </ul>
+
+                            <h4>主要技术参数对比</h4>
+                            <div class="tech-params">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>船型</th>
+                                            <th>建造年代</th>
+                                            <th>长度(m)</th>
+                                            <th>载重(t)</th>
+                                            <th>船员数</th>
+                                            <th>续航力(海里)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>独木舟</td>
+                                            <td>前6000</td>
+                                            <td>3-5</td>
+                                            <td>0.5</td>
+                                            <td>1-2</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>汉代楼船</td>
+                                            <td>公元50</td>
+                                            <td>30</td>
+                                            <td>200</td>
+                                            <td>100+</td>
+                                            <td>1000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>宋代福船</td>
+                                            <td>1127</td>
+                                            <td>40</td>
+                                            <td>600</td>
+                                            <td>200</td>
+                                            <td>3000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>郑和宝船</td>
+                                            <td>1405</td>
+                                            <td>120</td>
+                                            <td>1500</td>
+                                            <td>600+</td>
+                                            <td>10000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="conclusion">这一技术演进过程不仅推动了人类文明的空间拓展，更塑造了东西方文明的交流格局。其核心智慧至今仍在船舶工程领域发挥重要启示作用。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="medievalModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">中世纪造船史</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="article-content">
+                        <img src="https://images.pexels.com/photos/1295139/pexels-photo-1295139.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="中世纪船舶" class="article-image">
+                        <div class="article-text">
+                            <h3>中世纪造船技术的进步</h3>
+                            <p>中世纪时期，造船技术经历了重大革新，从拜占庭帝国的框架造船法到北欧维京人的塔接工艺，形成了两大技术体系，为后世航海技术发展奠定基础。</p>
+
+                            <h4>一、船体结构与建造工艺</h4>
+                            <div class="history-period">
+                                <h5>1. 榫接与框架造船法</h5>
+                                <ul>
+                                    <li><strong>拜占庭创新：</strong>在继承罗马榫接技术基础上，首创框架造船法（7-11世纪），先搭建龙骨框架再安装船板，大幅提升建造效率和船体强度，为后世威尼斯船厂流水线生产奠定基础。</li>
+                                    <li><strong>北欧特色：</strong>采用塔接（Clinker-built）工艺，重叠船板用铁铆钉固定，增强船体抗冲击能力，典型如维京长船（如9世纪的戈斯塔德船）。</li>
+                                </ul>
+
+                                <h5>2. 水密隔舱技术</h5>
+                                <ul>
+                                    <li><strong>技术发展：</strong>虽然成熟于宋代中国，但拜占庭船只通过多舱室设计提升了抗沉性，例如10世纪双列桨"德龙猛"战舰的隔舱结构。</li>
+                                </ul>
+                            </div>
+
+                            <h4>二、动力与操控系统</h4>
+                            <div class="history-period">
+                                <h5>1. 风帆革新</h5>
+                                <ul>
+                                    <li><strong>拜占庭创新：</strong>将横帆改进为纵帆（斜挂于桅杆，与船体呈45度），使船只可利用侧风航行，速度提升30%，顺风时"德龙猛"从爱琴海到克里特岛仅需1天。</li>
+                                    <li><strong>北欧特色：</strong>从8世纪起使用方帆，帆面涂有彩色条纹以增强辨识度，结合桨划实现全天候航行。</li>
+                                </ul>
+
+                                <h5>2. 舵与转向系统</h5>
+                                <ul>
+                                    <li><strong>技术突破：</strong>12-14世纪北欧船采用垂直舵柄取代传统舵桨，操控稳定性显著提升，使斜向航行成为可能。</li>
+                                </ul>
+                            </div>
+
+                            <h4>三、军事技术应用</h4>
+                            <div class="history-period">
+                                <h5>1. 战船升级</h5>
+                                <ul>
+                                    <li><strong>拜占庭创新：</strong>为对抗阿拉伯海军，将单桨"德龙猛"升级为双列桨战舰，搭载"希腊火"喷射装置，成为10世纪东地中海霸主。</li>
+                                    <li><strong>北欧特色：</strong>改进维京长船，增加撞角和高阁平台，用于投掷石块、弓箭等远程攻击。</li>
+                                </ul>
+
+                                <h5>2. 专业化分工</h5>
+                                <ul>
+                                    <li><strong>生产革新：</strong>拜占庭船坞实现流水线生产，将造船从劳动密集型转向专业化分工，适应战争需求。</li>
+                                </ul>
+                            </div>
+
+                            <h4>四、区域技术特色</h4>
+                            <div class="region-tech">
+                                <div class="region-item">
+                                    <h5>地中海体系</h5>
+                                    <ul>
+                                        <li><strong>拜占庭特色：</strong>框架法、双列桨战船、纵帆技术，影响后世威尼斯桨帆船</li>
+                                        <li><strong>阿拉伯特色：</strong>三角帆船（单桅纵帆）成为印度洋贸易主力</li>
+                                    </ul>
+                                </div>
+                                <div class="region-item">
+                                    <h5>北欧体系</h5>
+                                    <ul>
+                                        <li><strong>早期特色：</strong>维京长船（瘦长船身、无甲板、塔接工艺）主导北大西洋劫掠与殖民</li>
+                                        <li><strong>后期发展：</strong>12世纪后发展出单甲板大帆船，配备撞角和厚木板装甲</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h4>五、技术影响与遗产</h4>
+                            <ul>
+                                <li><strong>贸易与殖民：</strong>维京船推动北欧人抵达冰岛、格陵兰；拜占庭船只维持东地中海贸易网络</li>
+                                <li><strong>军事革命：</strong>希腊火战船改变海战模式，高阁投掷战术普及</li>
+                                <li><strong>技术传播：</strong>拜占庭框架法经威尼斯传入欧洲，为大航海时代造船术奠基</li>
+                            </ul>
+
+                            <h4>关键技术对比</h4>
+                            <div class="tech-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>技术领域</th>
+                                            <th>拜占庭创新</th>
+                                            <th>北欧特色</th>
+                                            <th>时间跨度</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>建造工艺</strong></td>
+                                            <td>框架造船法</td>
+                                            <td>塔接铆接</td>
+                                            <td>7-11世纪</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>风帆系统</strong></td>
+                                            <td>纵帆（斜挂设计）</td>
+                                            <td>方帆+桨划</td>
+                                            <td>8-10世纪</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>战船功能</strong></td>
+                                            <td>双列桨+希腊火</td>
+                                            <td>撞角+高阁投掷</td>
+                                            <td>10-14世纪</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>导航辅助</strong></td>
+                                            <td>无明确记载</td>
+                                            <td>航位推算+岛屿定位</td>
+                                            <td>贯穿中世纪</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="conclusion">中世纪造船技术的进步不仅重塑了海洋权力格局，更成为连接古典时代与大航海时代的关键纽带。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="industrialModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">工业革命时期的造船</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="article-content">
+                        <img src="https://th.bing.com/th/id/OIP.DDZYOF1Sb5gqQw-unx82sQAAAA?w=182&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="工业革命船舶" class="article-image">
+                        <div class="article-text">
+                            <h3>工业革命与造船技术的革新</h3>
+                            <p>工业革命是人类文明从手工劳动向机械化、规模化生产转型的里程碑事件，对造船技术产生了深远影响。</p>
+
+                            <h4>一、工业革命的分期与特征</h4>
+                            <div class="history-period">
+                                <h5>1. 第一次工业革命（18世纪60年代–19世纪中期）</h5>
+                                <ul>
+                                    <li><strong>核心技术：</strong>蒸汽机、纺织机械化、工厂制度</li>
+                                    <li><strong>发源地：</strong>英国（1760年代始于棉纺织业）</li>
+                                    <li><strong>标志事件：</strong>瓦特改良蒸汽机（1782年）、阿克莱特建立第一家近代工厂（1771年）</li>
+                                </ul>
+
+                                <h5>2. 第二次工业革命（19世纪末–20世纪初）</h5>
+                                <ul>
+                                    <li><strong>核心技术：</strong>电力、内燃机、化工技术</li>
+                                    <li><strong>特征：</strong>重工业崛起、垄断资本主义形成</li>
+                                    <li><strong>代表发明：</strong>西门子发电机（1866年）、爱迪生电灯（1879年）、本茨汽车（1886年）</li>
+                                </ul>
+
+                                <h5>3. 第三次工业革命（20世纪中叶至今）</h5>
+                                <ul>
+                                    <li><strong>核心技术：</strong>信息技术、原子能、生物科技</li>
+                                    <li><strong>特征：</strong>知识经济、全球化生产网络</li>
+                                    <li><strong>当前趋势：</strong>人工智能、新能源、数字化转型</li>
+                                </ul>
+                            </div>
+
+                            <h4>二、造船技术的关键突破</h4>
+                            <div class="tech-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>技术领域</th>
+                                            <th>代表成就</th>
+                                            <th>历史影响</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>动力系统</strong></td>
+                                            <td>蒸汽机应用</td>
+                                            <td>推动船舶动力革命，实现远洋航行</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>船体材料</strong></td>
+                                            <td>钢铁船体</td>
+                                            <td>提升船体强度，扩大载重能力</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>制造工艺</strong></td>
+                                            <td>标准化生产</td>
+                                            <td>提高建造效率，降低制造成本</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4>三、社会经济影响</h4>
+                            <div class="region-tech">
+                                <div class="region-item">
+                                    <h5>经济结构转型</h5>
+                                    <ul>
+                                        <li><strong>轻工业主导：</strong>英国棉纺织业成为经济支柱</li>
+                                        <li><strong>重工业崛起：</strong>焦炭冶铁技术推动生铁产量激增</li>
+                                        <li><strong>全球化贸易：</strong>形成"原料产地—工业中心—消费市场"的全球分工</li>
+                                    </ul>
+                                </div>
+                                <div class="region-item">
+                                    <h5>社会变革</h5>
+                                    <ul>
+                                        <li><strong>阶级分化：</strong>资产阶级与无产阶级对立形成</li>
+                                        <li><strong>劳工问题：</strong>超长工时、童工剥削引发工人运动</li>
+                                        <li><strong>城市化：</strong>城市人口激增，基础设施滞后</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h4>四、全球格局重塑</h4>
+                            <ul>
+                                <li><strong>殖民扩张：</strong>工业国家通过武力和贸易强迫殖民地开放市场</li>
+                                <li><strong>技术扩散：</strong>法国、德国、美国等通过引进技术实现工业化</li>
+                                <li><strong>南北差距：</strong>形成"中心—外围"经济结构</li>
+                            </ul>
+
+                            <h4>五、历史启示</h4>
+                            <div class="conclusion">
+                                <p>工业革命不仅是技术革命，更是生产关系与社会形态的根本性变革。其经验对当前"第四次工业革命"具有重要借鉴意义：</p>
+                                <ul>
+                                    <li>技术创新与制度适配的重要性</li>
+                                    <li>社会公平与可持续发展的平衡</li>
+                                    <li>全球化与本土化的协调发展</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modernModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">现代造船技术</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="article-content">
+                        <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&h=600&q=80" alt="现代船舶" class="article-image">
+                        <div class="article-text">
+                            <h3>现代造船技术的发展与创新</h3>
+                            <p>现代造船技术已经发展到了前所未有的高度，从巨型货轮到豪华邮轮，从军事舰艇到科研船只，各种类型的船舶都在不断突破技术极限。</p>
+
+                            <h4>一、现代造船技术特征</h4>
+                            <div class="history-period">
+                                <h5>1. 材料与工艺革新</h5>
+                                <ul>
+                                    <li><strong>钢质焊接船主导：</strong>采用高强度钢材和焊接技术，提升船体强度与耐腐蚀性</li>
+                                    <li><strong>模块化建造法：</strong>将船体分解为标准化模块，通过总装实现高效生产</li>
+                                    <li><strong>壳舾涂一体化：</strong>船体建造、舾装、涂装同步推进，缩短建造周期</li>
+                                </ul>
+
+                                <h5>2. 智能化与数字化</h5>
+                                <ul>
+                                    <li><strong>计算机辅助设计：</strong>实现船体线型、结构的精准建模与优化</li>
+                                    <li><strong>虚拟仿真：</strong>模拟船舶性能、施工流程，减少试错成本</li>
+                                    <li><strong>自动化焊接：</strong>提高焊接精度和生产效率</li>
+                                </ul>
+                            </div>
+
+                            <h4>二、现代造船工艺流程</h4>
+                            <div class="tech-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>工艺流程</th>
+                                            <th>关键技术</th>
+                                            <th>主要特点</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>设计与放样</strong></td>
+                                            <td>数学放样、三维建模</td>
+                                            <td>数字化设计，支持模块化拆分</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>材料预处理</strong></td>
+                                            <td>钢材矫正、除锈</td>
+                                            <td>确保材料质量，连续化生产</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>构件加工</strong></td>
+                                            <td>数控切割、成型</td>
+                                            <td>高精度加工，复杂曲面成型</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>船体合拢</strong></td>
+                                            <td>总段合拢、焊接</td>
+                                            <td>高精度对接，确保水密性</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>舾装调试</strong></td>
+                                            <td>系统集成、试航</td>
+                                            <td>性能测试，确保安全性</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4>三、全球产业格局</h4>
+                            <div class="region-tech">
+                                <div class="region-item">
+                                    <h5>中国造船业崛起</h5>
+                                    <ul>
+                                        <li><strong>市场份额：</strong>2024年造船完工量占全球55.7%</li>
+                                        <li><strong>高端突破：</strong>14种主流船型新接订单量世界首位</li>
+                                        <li><strong>绿色转型：</strong>绿色动力船舶订单占全球78.5%</li>
+                                    </ul>
+                                </div>
+                                <div class="region-item">
+                                    <h5>国际竞争态势</h5>
+                                    <ul>
+                                        <li><strong>日韩优势：</strong>韩国LNG船领先，日本专注高端邮轮</li>
+                                        <li><strong>欧洲特色：</strong>德国、挪威聚焦模块化与环保技术</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h4>四、未来发展趋势</h4>
+                            <div class="history-period">
+                                <h5>1. 技术方向</h5>
+                                <ul>
+                                    <li><strong>零碳船舶：</strong>开发氢、氨燃料动力系统</li>
+                                    <li><strong>智能化航运：</strong>结合AI、物联网实现自主航行</li>
+                                    <li><strong>数字孪生：</strong>构建虚拟船厂，优化供应链协同</li>
+                                </ul>
+
+                                <h5>2. 产业挑战</h5>
+                                <ul>
+                                    <li><strong>供应链：</strong>关键设备依赖进口，需加强自主可控</li>
+                                    <li><strong>环保法规：</strong>IMO对碳排放限制倒逼技术升级</li>
+                                </ul>
+                            </div>
+
+                            <div class="conclusion">
+                                <p>现代造船技术正朝着智能化、绿色化、数字化方向发展，中国造船业在全球竞争中展现出强大实力，未来将继续引领行业创新与变革。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="huangpuModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">黄埔文冲船舶有限公司</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="article-content">
+                        <img src="http://www.csschpws.com/upload_img/65000t.jpg" alt="黄埔文冲" class="article-image">
+                        <div class="article-text">
+                            <h3>黄埔文冲的历史与发展</h3>
+                            <p>中船黄埔文冲船舶有限公司是中国船舶集团有限公司属下的大型骨干造船企业，是华南地区军用舰船、特种工程船、海洋工程、公务船及商货船的主要建造基地。</p>
+
+                            <h4>一、历史沿革</h4>
+                            <div class="history-period">
+                                <h5>1. 创立与发展</h5>
+                                <ul>
+                                    <li><strong>创立：</strong>前身为1851年创建的柯拜船坞，是外国资本在华建立的第一个工业企业</li>
+                                    <li><strong>历史地位：</strong>我国现存历史最悠久的船舶企业，中国第一代产业工人的诞生地</li>
+                                    <li><strong>发展历程：</strong>170多年来，在我国近代史、革命史、军工史、船舶工业发展史上留下光辉足迹</li>
+                                </ul>
+                            </div>
+
+                            <h4>二、厂区布局</h4>
+                            <div class="tech-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>厂区名称</th>
+                                            <th>位置</th>
+                                            <th>规模</th>
+                                            <th>主要产品</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>长洲厂区</strong></td>
+                                            <td>广州长洲岛</td>
+                                            <td>占地70万平方米</td>
+                                            <td>水面战斗舰船、大型公务船</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>文冲厂区</strong></td>
+                                            <td>广州黄埔区</td>
+                                            <td>占地70万平方米</td>
+                                            <td>支线集装箱船、挖泥船</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>龙穴厂区</strong></td>
+                                            <td>广州南沙区</td>
+                                            <td>占地118万平方米</td>
+                                            <td>海洋工程船、特种运输船</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>钦州厂区</strong></td>
+                                            <td>广西钦州港</td>
+                                            <td>占地22.7万平方米</td>
+                                            <td>海上风电装备</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4>三、核心能力</h4>
+                            <div class="region-tech">
+                                <div class="region-item">
+                                    <h5>船舶建造能力</h5>
+                                    <ul>
+                                        <li><strong>船坞规模：</strong>拥有1.2万吨级到20万吨级多座大型船坞</li>
+                                        <li><strong>码头设施：</strong>码头总长5300多米，岸线资源丰富</li>
+                                        <li><strong>建造能力：</strong>具备各类船舶建造能力，从支线集装箱船到大型特种船舶</li>
+                                    </ul>
+                                </div>
+                                <div class="region-item">
+                                    <h5>特色产品</h5>
+                                    <ul>
+                                        <li><strong>支线集装箱船：</strong>1700箱、2200箱、2700箱系列产品</li>
+                                        <li><strong>挖泥船：</strong>舱容500-20000立方米系列产品</li>
+                                        <li><strong>海洋工程：</strong>深水工程勘察船、水下作业支持船等</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h4>四、技术创新</h4>
+                            <div class="history-period">
+                                <h5>1. 智能船舶</h5>
+                                <ul>
+                                    <li><strong>全球首艘智能商船：</strong>引领船舶智能化发展</li>
+                                    <li><strong>LNG双燃料船：</strong>推动船舶绿色化转型</li>
+                                </ul>
+
+                                <h5>2. 海洋工程装备</h5>
+                                <ul>
+                                    <li><strong>深水装备：</strong>3000米深水工程勘察船</li>
+                                    <li><strong>特种装备：</strong>饱和潜水船、管道挖沟船等</li>
+                                    <li><strong>风电装备：</strong>海上风电安装平台</li>
+                                </ul>
+                            </div>
+
+                            <div class="conclusion">
+                                <p>黄埔文冲作为中国历史最悠久的船舶企业，在传承百年造船工艺的同时，不断创新发展，在智能船舶、绿色船舶、海洋工程等领域引领行业发展，为中国船舶工业的进步做出重要贡献。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 作品展示区 -->
+    <section id="works" class="works">
+        <h2>作品展示</h2>
+        <div class="works-grid">
+            <!-- 3D模型展示 -->
+            <div class="work-item model-viewer">
+                <div id="model-container" class="model-container">
+                    <canvas id="model-canvas"></canvas>
+                    <div class="model-controls">
+                        <button class="model-control-btn" id="rotate-left"><i class="fas fa-undo"></i></button>
+                        <button class="model-control-btn" id="rotate-right"><i class="fas fa-redo"></i></button>
+                        <button class="model-control-btn" id="zoom-in"><i class="fas fa-search-plus"></i></button>
+                        <button class="model-control-btn" id="zoom-out"><i class="fas fa-search-minus"></i></button>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <h3>3D作品</h3>
+                    <p>船舶3D建模展示</p>
+                </div>
+            </div>
+            <!-- 设计作品画廊 -->
+            <div class="work-item design-gallery">
+                <div class="gallery-container">
+                    <a href="https://images.pexels.com/photos/1295141/pexels-photo-1295141.jpeg" 
+                       data-fancybox="gallery" 
+                       class="gallery-item">
+                        <img src="https://images.pexels.com/photos/1295141/pexels-photo-1295141.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="设计作品1">
+                    </a>
+                    <a href="https://images.pexels.com/photos/1295142/pexels-photo-1295142.jpeg" 
+                       data-fancybox="gallery" 
+                       class="gallery-item">
+                        <img src="https://images.pexels.com/photos/1295142/pexels-photo-1295142.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="设计作品2">
+                    </a>
+                    <a href="https://images.pexels.com/photos/1295143/pexels-photo-1295143.jpeg" 
+                       data-fancybox="gallery" 
+                       class="gallery-item">
+                        <img src="https://images.pexels.com/photos/1295143/pexels-photo-1295143.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="设计作品3">
+                    </a>
+                </div>
+                <div class="work-info">
+                    <h3>设计作品</h3>
+                    <p>船舶设计展示</p>
+                </div>
+            </div>
+            <!-- 制造过程 -->
+            <div class="work-item manufacturing">
+                <img src="https://images.pexels.com/photos/1295142/pexels-photo-1295142.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="制造过程" class="work-image">
+                <div class="work-info">
+                    <h3>制造过程</h3>
+                    <p>船舶制造流程展示</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="about">
+        <h2>关于我</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>专注于船舶设计与制造的工程师，致力于将传统工艺与现代技术相结合。</p>
+            </div>
+            <div class="skills">
+                <div class="skill-item">
+                    <span class="skill-name">船舶设计</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">3D建模</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">制造工艺</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="contact">
+        <h2>联系方式</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> 邮箱：1254863751@qq.com</p>
+                <p><i class="fab fa-weixin"></i> 微信：13411173945_wechat</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2025.03.14戴先生. All rights reserved.</p>
+    </footer>
+
+    <!-- 使用CDN加载JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="debug.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
